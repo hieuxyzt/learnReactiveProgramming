@@ -2,6 +2,7 @@ package com.example.webflux.sec05.assignment;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -35,6 +36,7 @@ public class RevenueService {
      */
     public Flux<String> revenueStream() {
         return Flux.interval(Duration.ofSeconds(1))
-                .map(l -> db.toString());
+                .map(l -> db.toString())
+                .subscribeOn(Schedulers.boundedElastic());
     }
 }

@@ -2,6 +2,7 @@ package com.example.webflux.sec05.assignment;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -23,6 +24,7 @@ public class InventoryService {
 
     public Flux<String> inventoryStream(){
         return Flux.interval(Duration.ofSeconds(1))
-                .map(l -> db.toString());
+                .map(l -> db.toString())
+                .subscribeOn(Schedulers.boundedElastic());
     }
 }
