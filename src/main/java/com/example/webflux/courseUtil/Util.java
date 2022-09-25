@@ -11,11 +11,11 @@ public class Util {
     public static final Faker FAKER = Faker.instance();
 
 
-    public static Consumer<Object> onNext(){
+    public static Consumer<Object> onNext() {
         return o -> log.info("Received: {}", o);
     }
 
-    public static Consumer<Throwable> onError(){
+    public static Consumer<Throwable> onError() {
 //        return e -> log.info();("ERROR: " + e.getMessage());
         return new Consumer<Throwable>() {
             @Override
@@ -25,15 +25,15 @@ public class Util {
         };
     }
 
-    public static Runnable onComplete(){
+    public static Runnable onComplete() {
         return () -> log.info("Complete");
     }
 
-    public static Runnable onComplete(String info){
+    public static Runnable onComplete(String info) {
         return () -> log.info(info);
     }
 
-    public static Faker faker(){
+    public static Faker faker() {
         return FAKER;
     }
 
@@ -45,11 +45,25 @@ public class Util {
         }
     }
 
+    public static void sleepMillis(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public static Subscriber<Object> subscriber() {
         return new DefaultSubscriber();
     }
 
     public static Subscriber<Object> subscriber(String name) {
         return new DefaultSubscriber(name);
+    }
+
+    public static Double randomDemandRate() {
+        return Util.faker().random().nextInt(80, 120) / 100D;
+
     }
 }

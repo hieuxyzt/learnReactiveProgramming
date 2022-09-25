@@ -1,0 +1,4 @@
+buffer
+drop: full, drop items coming
+latest: except latest
+error: throw exception

@@ -5,9 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 @Slf4j
 public class Lec02SubscribeOnDemo {
     public static void main(String[] args) {

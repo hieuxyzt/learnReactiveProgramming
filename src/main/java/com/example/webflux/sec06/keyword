@@ -1,0 +1,18 @@
+Publisher       P P P
+ThreadPool   ||   ||   ||
+Consumer        C C C
+
+subscribeOn change thread of source emission
+publishOn switch context for downstream operators
+
+https://vinsguru.medium.com/java-reactive-programming-schedulers-359b5918aadd
+
+** NOTE **
+-   "subscribeOn, publishOn" xử lý bất đồng bộ kiểu:
+    All the operations are always executed in sequential
+
+
+
+-   .parallel() parallel for CPU tasks, not mean parallel execution
+    ParallelFlux doesnt have publishOn, subscribeOn
+    multiple publisher (ParallelFlux) downstream -> sequential() convert to single publisher (Flux)
