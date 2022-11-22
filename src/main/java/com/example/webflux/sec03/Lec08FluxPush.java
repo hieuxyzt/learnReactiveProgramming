@@ -9,7 +9,7 @@ public class Lec08FluxPush {
     public static void main(String[] args) {
         NameProducer nameProducer = new NameProducer();
 
-        //same as create, except tend to use single thread
+        //same as create
         //not thread safe
         Flux.push(nameProducer)
                 .subscribe(Util.subscriber());
