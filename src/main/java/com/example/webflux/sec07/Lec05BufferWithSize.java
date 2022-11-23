@@ -12,13 +12,13 @@ public class Lec05BufferWithSize {
 //        Queues
         System.setProperty("reactor.bufferSize.small", "16");
         Flux.create(fluxSink -> {
-            for (int i = 0; i < 100 && !fluxSink.isCancelled(); i++) {
-                fluxSink.next(i);
-                System.out.println("Pushed: " + i);
-                Util.sleepMillis(1);
-            }
-            fluxSink.complete();
-        })
+                    for (int i = 0; i < 100 && !fluxSink.isCancelled(); i++) {
+                        fluxSink.next(i);
+                        System.out.println("Pushed: " + i);
+                        Util.sleepMillis(1);
+                    }
+                    fluxSink.complete();
+                })
                 .onBackpressureBuffer(50)
                 .publishOn(Schedulers.boundedElastic())
                 .doOnNext(i -> Util.sleepMillis(10))

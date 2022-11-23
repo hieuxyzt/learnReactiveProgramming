@@ -1,4 +1,4 @@
-package com.example.webflux.section9.helper;
+package com.example.webflux.section9_batching.helper;
 
 import lombok.ToString;
 

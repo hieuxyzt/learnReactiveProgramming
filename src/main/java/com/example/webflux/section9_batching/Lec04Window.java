@@ -1,4 +1,4 @@
-package com.example.webflux.section9;
+package com.example.webflux.section9_batching;
 
 import com.example.webflux.courseUtil.Util;
 import reactor.core.publisher.Flux;

@@ -1,8 +1,8 @@
-package com.example.webflux.section9;
+package com.example.webflux.section9_batching;
 
 import com.example.webflux.courseUtil.Util;
-import com.example.webflux.section9.helper.BookOrder;
-import com.example.webflux.section9.helper.BookRevenue;
+import com.example.webflux.section9_batching.helper.BookOrder;
+import com.example.webflux.section9_batching.helper.BookRevenue;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;

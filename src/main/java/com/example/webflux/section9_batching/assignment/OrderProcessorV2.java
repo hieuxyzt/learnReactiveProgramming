@@ -1,4 +1,4 @@
-package com.example.webflux.section9.assignment;
+package com.example.webflux.section9_batching.assignment;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

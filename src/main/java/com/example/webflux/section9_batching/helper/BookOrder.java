@@ -1,4 +1,4 @@
-package com.example.webflux.section9.helper;
+package com.example.webflux.section9_batching.helper;
 
 import com.github.javafaker.Book;
 import com.github.javafaker.Faker;
